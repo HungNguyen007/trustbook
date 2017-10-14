@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ECDSA Key Pair to Address</title>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="main.css">    -->
+    <!-- <link rel="stylesheet" href="company.css"> -->
+    <link rel="stylesheet" href="blockchain.css"> 
+</head>
+
+<body>
+    <div class="container">
+
+        <h3>ECDSA Key Pair to <a href="" data-toggle="tooltip" data-placement="auto" title="A Bitcoin address represents a possible destination for a bitcoin payment.">Address</a> </h3>
+
+        <div ng-controller="bcAddTestCtrl"> 
+            <form ng-submit="bcAddTestRandom()">
+                <div class="form-group">
+                    <input type="submit" value="Random" />
+                </div>
+            </form> 
+            
+            <form ng-submit="bcAddTestConvert()">                                    
+                <div class="form-group">
+                    <label for="prvKey">0 - Private ECDSA key</label>
+                    <input type='text' class="form-control" name='prvKey' ng-model="prvKey" />
+                    <input type="submit" value="Convert" /> 
+                </div>
+            </form>
+            
+            <form>
+                <div class="form-group">
+                    <label for="pubKey">1 - Public ECDSA key</label>
+                    <input type='text' class="form-control" id='pubKey' name='pubKey' ng-model="pubKey" />
+                </div>
+                        
+                <div class="form-group">
+                        <label for="firstSHA256">2 - SHA-256 hash of 1</label>  
+                    <input type='text' class="form-control" id='firstSHA256' name='firstSHA256' ng-model="firstSHA256" />
+                </div>
+                                
+                <div class="form-group">
+                    <label for="RIPEMD160">3 - RIPEMD-160 Hash of 2</label>  
+                    <input type='text' class="form-control" id='RIPEMD160' name='RIPEMD160' ng-model="RIPEMD160" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="netByte">4 - Adding <a href="" data-toggle="tooltip" title="">network bytes</a> to 3</label>
+                    <input type='text' class="form-control" id='netByte' name='netByte' ng-model="netByte" />
+                </div>
+
+                <div class="form-group">
+                    <label for="secondSHA256">5 - SHA-256 hash of 4</label>
+                    <input type='text' class="form-control" id='secondSHA256' name='secondSHA256' ng-model="secondSHA256" />
+                </div>
+
+                <div class="form-group">
+                    <label for="thirdSHA256">6 - SHA-256 hash of 5</label>
+                    <input type='text' class="form-control" id='thirdSHA256' name='thirdSHA256' ng-model="thirdSHA256" />
+                </div>
+            </form> 
+
+            <label for="CKHSUM">7 - First 4 bytes of 6, this is the checksum</label>
+            <form>
+                <div class="form-group">
+                    <input type='text' class="form-control" name='CKHSUM' ng-model="CKHSUM" />
+                </div>
+            </form>
+
+            <label for="fullAddress">8 - Adding 7 at the end of 4</label>
+            <form>
+                <div class="form-group">
+                    <input type='text' class="form-control" name='fullAddress' ng-model="fullAddress" />
+                </div>
+            </form>
+
+            <label for="address">9 - Base58 encoding of 8</label>
+            <form>
+                <div class="form-group">
+                    <input type='text' class="form-control" name='address' name='address' ng-model="address" />
+                </div>
+            </form> 
+        </div>    
+
+    </div>
+    <br>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
+</html>

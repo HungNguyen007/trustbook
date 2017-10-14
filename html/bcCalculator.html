@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Calculators</title>
+    <link rel="stylesheet" href="blockchain.css"> 
+</head>
+<body>
+    
+    <div class="container" ng-controller="bcCalCtrl">
+        
+        <h3 class="text-center">Fiat Money to Bitcoin Conversion</h2>
+        
+        <form class="form-horizontal" > 
+            <div class="form-group">
+                <div class="col-md-3">
+                </div> 
+                <div class="col-md-3">
+                    <input type="text" ng-pattern="regex" ng-change="toFiatMoney()" class="form-control" ng-model="bcValue" >
+                </div>       
+                <div class="col-md-3">
+                    <select ng-change="selectConverter()" class="form-control" ng-model="bcType" >
+                        <option value="BTC" selected>BTC - Bitcoin</option>
+                        <option value="mBTC" >mBTC - Mili Bitcoin</option>
+                        <option value="uBTC" >uBTC - Micro Bitcoin</option>
+                    </select>
+                </div>
+            </div>    
+
+            <div class="form-group">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3" class="form-group">
+                    <input type="text" ng-pattern="regex" ng-change="toBtcDelay()" class="form-control" ng-model="fiatValue">
+                </div>                   
+                <div style="color:dimgrey" class="col-md-3" class="form-group">
+                    <select  ng-change="selectConverter()" class="form-control" id="sel1" ng-model="currency">
+                        <option value="USD" selected>USD - United State Dollar</option>
+                        <option value="EUR" >EUR - Euro</option>
+                        <option value="GBP" >GBP - British Pound Sterling</option>
+                        <option value="JPY" >JPY - Japanese Yen </option>
+                        <option value="AUD" >AUD - Australian Dollar </option>
+                        <option value="SGD" >SGD - Singapore Dollar</option>
+                        <option value="CNY" >CNY - Chinese Yuan </option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <br>
+    
+</body>
+</html>

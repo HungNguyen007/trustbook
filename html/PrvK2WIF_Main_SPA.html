@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Private key to WIF</title>
+     <!-- <link rel="stylesheet" href="main.css">  -->
+     <link rel="stylesheet" href="blockchain.css"> 
+</head>
+<body>
+
+    <div class="container">
+        <h3>Private key to <a href="" data-toggle="tooltip" title="Wallet Import Format (WIF, also known as Wallet Export Format) is a way of encoding a private ECDSA key so as to make it easier to copy.">wallet import format (WIF)</a> </h3>
+    
+    <div class="blurb" ng-controller="prk2WifCtrl">       
+        <div ng-controller="prK2WifRandomCtrl"  > 
+
+            <form ng-submit="prvK2WifRandom()" > 
+                <input type="submit" value="Random"/>
+            </form>
+        
+            <form ng-submit="prvK2WifConvert()">
+                <div class="form-group">
+                    <label for="prvKey">1 - Private key</label>
+                    <input type='text' class="form-control" name='prvKey' ng-model="prvKey"/>
+                    <input type="submit" value="Convert" />
+                </div>
+            </form>
+        
+            <form>
+                <div class="form-group">
+                    <label for="extPrvKey">2 - Add 0x80 byte to the front of 1 for mainnet addresses</label>
+                    <input type='text' class="form-control" ng-model="extPrvKey" />
+                </div>
+            </form>
+        
+            <form>
+                <div class="form-group">
+                    <label for="firstSHA256">3 - SHA-256 hash of 2</label>
+                    <input type='text' class="form-control"  ng-model="firstSHA256"/>
+                </div>
+            </form>
+        
+            <form>
+                <div class="form-group">
+                    <label for="secondSHA256">4 - SHA-256 hash of 3</label>
+                    <input type='text' class="form-control"  ng-model="secondSHA256" />
+                </div>
+            </form>
+        
+            <form>
+                <div class="form-group">
+                    <label for="CKHSUM">5 - First 4 bytes of 4, this is the checksum</label>
+                    <input type='text' class="form-control"  ng-model="CKHSUM" />
+                </div>
+            </form>
+        
+            <form>
+                <div class="form-group">
+                    <label for="extPrKeyCKHSUM">6 - Adding 5 at the end of 2</label>
+                    <input type='text' class="form-control"  ng-model="extPrKeyCKHSUM" />
+                </div>
+            </form>
+    
+            <form>
+                <div class="form-group">
+                    <label for="secondSHA256">7 - Base58 encoding of 6</label>
+                    <input type='text' class="form-control"  ng-model="wif" />
+                </div>
+            </form>
+        </div> 
+
+    </div><!-- /.blurb -->
+
+    </div>
+    <br>
+    
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+</body>
+</html>

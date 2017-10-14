@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Popular Stats</title>
+    <link rel="stylesheet" href="blockchain.css">
+    <style>
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container container-fake" ng-controller="bcStatsCtrl">
+        <h2 class="text-center">Popular Stats</h2>
+
+        <div class="row">
+
+            <div class="col-md-3 center flex-column popular">
+                <span class="mt-10 blue f-20">Market Price (USD)</span>
+                <a href="" class="flex-column center mv-50">
+                    <span class="f-48">$<span ng-model="marketPrice" ></span>{{marketPrice}}</span>
+                    <span>USD</span>
+                </a>
+                <span class="f-14">Average USD market price across major bitcoin exchanges.</span>
+            </div>
+
+            <div class="col-md-3 center flex-column popular">
+                <span class="mt-10 blue f-20">Average Block Size</span>
+                    <a href="" class="flex-column center mv-50">
+                        <span class="f-48" >{{blockSize}}</span>
+                        <span>Megabytes</span>
+                    </a>
+                <span class="f-14">The 24 hour average block size in MB.</span>
+            </div>
+
+            <div class="col-md-3 center flex-column popular">
+                <!-- Needs Translation --><span class="mt-10 blue f-20">Transactions per Day</span><!-- Needs Translation -->
+                    <a href="" class="flex-column center mv-50">
+                        <span class="f-48" >{{txPerDay}}</span>
+                        <span>Transactions</span>
+                    </a>
+                <span class="f-14">The aggregate number of confirmed Bitcoin transactions in the past 24 hours.</span>
+            </div>
+
+            <div class="col-md-3 center flex-column popular">
+                <span class="mt-10 blue f-20">Mempool Size</span>
+                    <a href="" class="flex-column center mv-50">
+                        <span class="f-48" >{{mempoolSize}}</span>
+                        <span>Bytes</span>
+                    </a>
+                <span class="f-14">The aggregate size of transactions waiting to be confirmed.</span>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    
+</body>
+</html>
