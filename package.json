@@ -1,17 +1,21 @@
 {
   "name": "Demo_Bitcoin",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Node.js app to serve Bitcoin/Blockchain tools",
+  "engines": {
+    "node": "6.11.4"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ -d lib/",
-    "prepublish": "npm run build",
-    "flow": "flow",
     "integration": "mocha test/integration/",
     "start": "node server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -40,6 +44,12 @@
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
     "sinon": "^3.2.1",
-    "uglify-js": "^3.0.21"
+    "uglify-js": "^3.0.21",
+    "minimatch": "^3.0.2",
+    "graceful-fs": "^4.0.0"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HungNguyen007/trustbook"
   }
 }
