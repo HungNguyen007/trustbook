@@ -11,7 +11,7 @@ const addTestRoute = require('./src/routes/addTestRoute');
 
 //Small check for OpenShift's Node.js
 var server_port = process.env.PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+//var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 // Serving Static Files
 app.use(express.static(path.join(__dirname, 'html')));
@@ -29,7 +29,7 @@ app.use(wifRoute);
 app.use(addTestRoute);
 
 
-var server = app.listen(server_port, server_ip_address, function () {
+var server = app.listen(server_port, function () {
     var port = server.address().port
-    console.log("Bitcoin app listening on %s:%s",server_ip_address, port)
+    console.log("Bitcoin app listening on port %s", port)
 })
