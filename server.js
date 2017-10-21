@@ -8,6 +8,11 @@ var bodyParser = require('body-parser');
 const path = require('path');
 const wifRoute = require('./src/routes/wifRoute');
 const addTestRoute = require('./src/routes/addTestRoute');
+var http = require("http");
+
+setInterval(function() {
+    http.get("https://polar-fjord-45848.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
 
 //Small check for OpenShift's Node.js
 var server_port = process.env.PORT || 8080
