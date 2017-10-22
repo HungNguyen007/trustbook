@@ -1,4 +1,4 @@
-indexApp.controller('bcCalCtrl', ['$scope', '$http','$timeout', function($scope, $http, $timeout) {
+indexApp.controller('bcCalCtrl', function($scope, $http, $timeout) {
 
     var resourceLock = "";
 
@@ -6,7 +6,6 @@ indexApp.controller('bcCalCtrl', ['$scope', '$http','$timeout', function($scope,
         resourceLock = "toFiatMoney";
         $scope.fiatValue = parseFloat(response.data.USD.last);
         $scope.bcValue = 1;
-        console.log("calculated value is " + response.data.USD.last);
         $scope.currency = "USD";
         $scope.bcType = "BTC";
         
@@ -21,14 +20,9 @@ indexApp.controller('bcCalCtrl', ['$scope', '$http','$timeout', function($scope,
         /* Clear non numeric value */
         regex = /[^0-9.\/]/g;
         fiatValue = $scope.fiatValue = String($scope.fiatValue).replace(regex, '');
-
-        // fiatValue = $scope.fiatValue;
-
         fiatValueQuery = "value=" + fiatValue;
         bcType =  $scope.bcType;
         url = url + "?" + "cors=true" + "&" + currency + "&" + fiatValueQuery;
-        console.log("url is " + url);
-        
         
         if(fiatValue ) {
             $http.get(url).then(function(response) {
@@ -64,14 +58,12 @@ indexApp.controller('bcCalCtrl', ['$scope', '$http','$timeout', function($scope,
         regex = /[^0-9.\/]/g;;
         bcValue = $scope.bcValue = String(bcValue).replace(regex, '');
 
-        console.log("bcValue is " + typeof bcType);
         if(bcValue < 0) {bcValue = $scope.bcValue = Math.abs(bcValue)}  
 
         $http.get(url).then(function(response) {
             switch(bcType) {
                 case "mBTC":
                     bcValue = bcValue/1000;
-                    console.log("bcValue is " + bcValue);
                     break;
                 case "uBTC":
                     bcValue = bcValue / Math.pow(10,6);
@@ -113,9 +105,7 @@ indexApp.controller('bcCalCtrl', ['$scope', '$http','$timeout', function($scope,
             $scope.toFiatMoney();
         }
         else $scope.toBtcDelay();
-
     }
-    
-    
-}]);
+      
+});
 

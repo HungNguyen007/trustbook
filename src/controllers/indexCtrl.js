@@ -5,15 +5,14 @@ indexApp.config(function($routeProvider) {
         })
         .when("/bcStatsPage", {
             templateUrl : "bcStatsPage.html",
-            controller : "bcStatsCtrl"
         })
         .when("/bcCalculator", {
             templateUrl : "bcCalculator.html",
-            controller : "bcCalCtrl"
         })
         .when("/bcAddTest", {
             templateUrl : "bcAddGen.html",
-            controller : "bcAddTestCtrl"
         })
-
+        .when("/about", {
+            templateUrl : "about.html",
+        })
 });

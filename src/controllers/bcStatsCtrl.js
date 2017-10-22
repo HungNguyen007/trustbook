@@ -10,18 +10,16 @@ addCommas = function(n) {
     });
 }
 
-indexApp.controller('bcStatsCtrl', ['$scope', '$http', function($scope, $http) {
+indexApp.controller('bcStatsCtrl', function($scope, $http) {
     var url = "https://api.blockchain.info/stats?cors=true";
-
     $http.get(url).then( function(response) {
             $scope.marketPrice = addCommas(response.data.market_price_usd);              
-            $scope.txPerDay = addCommas(response.data.n_tx);         
-       
+            $scope.txPerDay = addCommas(response.data.n_tx);            
     });
 
-    url = "https://api.blockchain.info/charts/avg-block-size?timespan=24hours&cors=true";
+    url = "https://api.blockchain.info/charts/avg-block-size?timespan=48hours&cors=true";
     $http.get(url).then( function(response) {
-        $scope.blockSize = addCommas(response.data.values[0].y);     
+        $scope.blockSize = addCommas(response.data.values[0].y);
     });
 
     url = "https://api.blockchain.info/charts/mempool-size?cors=true"
@@ -30,4 +28,4 @@ indexApp.controller('bcStatsCtrl', ['$scope', '$http', function($scope, $http) {
        
     });
 
-}]);
+});

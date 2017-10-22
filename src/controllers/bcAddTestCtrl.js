@@ -1,6 +1,6 @@
 
-indexApp.controller('bcAddTestCtrl', ['$scope', '$http', function($scope, $http) {
-
+indexApp.controller('bcAddTestCtrl', function($scope, $http) {
+        
         $scope.prvKey = "EFDB5561A77A23159C7D2BC6FB1861F083E19D4620AFC0F7F962D628FB5E7797";
         $scope.pubKey = "0422B46E8224C181C588DDFAE6D4C4566B01F62E449985064803C0992821754F9A2E98A2C2D8763670F43DA6F8CDAB3382C814C889DD044C83F4F124D652D15B93";
         $scope.firstSHA256 = "882B55EFC6FCBDFB25483F54EFC0F64213B9C0500923FEAF4473E70BE6F9D414";
@@ -55,4 +55,4 @@ indexApp.controller('bcAddTestCtrl', ['$scope', '$http', function($scope, $http)
                         $scope.address = response.data.address;               
                 });
         }    
-}]);
+});
