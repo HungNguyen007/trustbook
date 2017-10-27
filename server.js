@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'src')));
 app.use(express.static(path.join(__dirname, 'src/app')));
 app.use(express.static(path.join(__dirname, 'css')));
 app.use(express.static(path.join(__dirname, 'build/js')));
-app.use(express.static(path.join(__dirname, 'src/controllers')));
+app.use(express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, 'src/util')));
 
 app.use(bodyParser.json()); // for parsing application/json
