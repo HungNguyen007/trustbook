@@ -24,23 +24,3 @@ function validDigits(n, dec) {
     return n;
 }
 
-// window.onload = function() {
-//     var n1= document.getElementById('number1'),
-//     n2= document.getElementById('number2');
-//     n1.value=n2.value='';
-
-//     n1.onkeyup= n1.onchange=n2.onkeyup=n2.onchange= function(e){
-//         e=e|| window.event; 
-//         var who=e.target || e.srcElement,temp;
-//         if(who.id==='number2')  temp= validDigits(who.value,2); 
-//         else temp= validDigits(who.value);
-//         who.value= addCommas(temp);
-//     }   
-//     n1.onblur= n2.onblur= function(){
-//         var temp=parseFloat(validDigits(n1.value)),
-//         temp2=parseFloat(validDigits(n2.value));
-//         if(temp)n1.value=addCommas(temp);
-//         if(temp2)n2.value=addCommas(temp2.toFixed(2));
-//     }
-// }
-

@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'html')));
 app.use(express.static(path.join(__dirname, 'src')));
 app.use(express.static(path.join(__dirname, 'src/app')));
 app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'build/js')));
 app.use(express.static(path.join(__dirname, 'src/controllers')));
 app.use(express.static(path.join(__dirname, 'src/util')));
 
@@ -31,7 +32,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //Serving routing path
 app.use(wifRoute);
 app.use(addTestRoute);
-
 
 var server = app.listen(server_port, function () {
     var port = server.address().port

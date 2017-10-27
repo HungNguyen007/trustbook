@@ -41,12 +41,13 @@
     "dhttp": "^2.3.5",
     "flow-bin": "^0.48.0",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
     "sinon": "^3.2.1",
-    "uglify-js": "^3.0.21",
-    "minimatch": "^3.0.2",
-    "graceful-fs": "^4.0.0"  
+    "uglify-js": "^3.0.21"
   },
   "repository": {
     "type": "git",

@@ -50,12 +50,8 @@ exports.JS_ConvertPrvKey2WIF = function(privateKey) {
 exports.createRandomPrvKey = function() {
     var randomBytes = bitcoin.randomBytes(32);
     return exports.JS_ConvertPrvKey2WIF(randomBytes.toString('hex').toUpperCase());
-    // return "Hello world";
-
 }
 
 exports.convertPrvKey2WIF = function(privateKey) {
     return exports.JS_ConvertPrvKey2WIF(privateKey.toString('hex').toUpperCase());
-    // return "Hello world";
-
 }
