@@ -5,5 +5,7 @@ module.exports = {
   BigInteger: require('bigi'),
   createHash: require('create-hash'),
   Buffer: require('safe-buffer').Buffer,
-  randomBytes: require('randombytes')
+  randomBytes: require('randombytes'),
+  crypto: require('crypto'),
+  bs58check: require('bs58check')
 }

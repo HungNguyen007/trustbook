@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 const path = require('path');
 const wifRoute = require('./src/routes/wifRoute');
 const addTestRoute = require('./src/routes/addTestRoute');
+const brainWRoute = require('./src/routes/brainWRoute');
+
 var http = require("http");
 
 setInterval(function() {
@@ -32,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //Serving routing path
 app.use(wifRoute);
 app.use(addTestRoute);
+app.use(brainWRoute);
 
 var server = app.listen(server_port, function () {
     var port = server.address().port

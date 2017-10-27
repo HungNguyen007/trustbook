@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ECDSA Key Pair to Address</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="blockchain.css">
+    <style>
+        body  {
+            background-image: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h3>Brain wallet generation <a href="" data-toggle="tooltip" data-placement="auto" title=""></a></h3>
+
+        <div ng-controller="brainWalletCtrl"> 
+            
+            <form ng-submit="bwConvert()">
+                <div class="form-group">
+                    <label for="secretPhr">Secret pass phrase</label>
+                    <input type='text' class="form-control" name='secretPhr' ng-model="secretPhr" />
+                    <input type="submit" value="Convert" />
+                </div>
+                        
+                <div class="form-group">
+                        <label for="prvKey">Private key</label>  
+                    <input type='text' class="form-control" name='prvKey' ng-model="prvKey" />
+                </div>
+                <div class="form-group">
+                        <label for="address">Resulting bitcoin address</label>  
+                    <input type='text' class="form-control" name='address' ng-model="address" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
