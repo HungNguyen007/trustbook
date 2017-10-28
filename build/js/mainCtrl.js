@@ -243,6 +243,10 @@ indexApp.config(function($routeProvider) {
         .when("/brainW", {
             templateUrl : "brainWallet.html",
         })
+        .when("/contact", {
+            templateUrl : "contact.html",
+        })
+
 });
 indexApp.controller('prk2WifCtrl', function($scope) {
     $scope.prvKey = "0C28FCA386C7A227600B2FE50B7CAE11EC86D3BF1FBE471BE89827E19D72AA1D";

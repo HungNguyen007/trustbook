@@ -18,4 +18,8 @@ indexApp.config(function($routeProvider) {
         .when("/brainW", {
             templateUrl : "brainWallet.html",
         })
+        .when("/contact", {
+            templateUrl : "contact.html",
+        })
+
 });
