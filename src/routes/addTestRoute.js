@@ -9,11 +9,9 @@ var addTest = require('../BC_AddTest')
 var multer = require('multer');
 var upload = multer(); // for parsing multipart/form-data
 
-
 router.get('/addTestRandom', function (req, res) {
     // Prepare output
     var response = addTest.BC_RandomAddForm();
-
     res.setHeader('content-type', 'application/json');
     res.end(response);
 })

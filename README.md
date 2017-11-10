@@ -35,3 +35,4 @@ javascript-obfuscator BitCoin_PrvKey2WIF.min.js --output BitCoin_PrvKey2WIF-obfu
     stringArrayThreshold: 0.75,
     unicodeEscapeSequence: true
 }
+

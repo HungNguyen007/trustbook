@@ -9,6 +9,7 @@ const path = require('path');
 const wifRoute = require('./src/routes/wifRoute');
 const addTestRoute = require('./src/routes/addTestRoute');
 const brainWRoute = require('./src/routes/brainWRoute');
+const hdWalletRoute = require('./src/routes/hdWalletRoute');
 
 var http = require("http");
 
@@ -27,6 +28,10 @@ app.use(express.static(path.join(__dirname, 'css')));
 app.use(express.static(path.join(__dirname, 'build/js')));
 app.use(express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, 'src/util')));
+app.use(express.static(path.join(__dirname, 'build/images')));
+app.use(express.static(path.join(__dirname, 'node_modules/qrcode-generator')));
+app.use(express.static(path.join(__dirname, 'node_modules/angular-qrcode')));
+
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -35,6 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(wifRoute);
 app.use(addTestRoute);
 app.use(brainWRoute);
+app.use(hdWalletRoute);
 
 var server = app.listen(server_port, function () {
     var port = server.address().port

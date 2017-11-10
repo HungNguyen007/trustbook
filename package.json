@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-qrcode": "^7.2.0",
+    "app-root-path": "^2.0.1",
     "bigi": "^1.4.2",
     "bip39": "^2.4.0",
     "bitcoinjs-lib": "^3.0.3",

@@ -6,7 +6,7 @@ indexApp.controller('bcAddTestCtrl', function($scope, $http) {
         $scope.firstSHA256 = "882B55EFC6FCBDFB25483F54EFC0F64213B9C0500923FEAF4473E70BE6F9D414";
         $scope.RIPEMD160 = "CBBC218B2FE0A3CF6EED9319F97D45CEA1A16099";
         $scope.netByte = "00CBBC218B2FE0A3CF6EED9319F97D45CEA1A16099";
-        
+
         $scope.secondSHA256 = "31D68068DC4B2C0587B8C4A61503718035EA4A80B2203E56A0238A7E033D200A";
 
         $scope.thirdSHA256 = "7D17B1FC4D4134A05032556931FE340A5590611EDD97CBDD9D99E2F35526ADE3" ;
@@ -37,7 +37,7 @@ indexApp.controller('bcAddTestCtrl', function($scope, $http) {
                         $scope.address = response.data.address;
                 });
         }
-        
+
         $scope.bcAddTestConvert = function() {
                 var url = "/addTestConvert";
                 var data = JSON.stringify({prvkey: $scope.prvKey});

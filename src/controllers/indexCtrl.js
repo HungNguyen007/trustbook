@@ -4,22 +4,24 @@ indexApp.config(function($routeProvider) {
             templateUrl : "PrvK2WIF_Main_SPA.html"
         })
         .when("/bcStatsPage", {
-            templateUrl : "bcStatsPage.html",
+            templateUrl : "bcStatsPage.html"
         })
         .when("/bcCalculator", {
-            templateUrl : "bcCalculator.html",
+            templateUrl : "bcCalculator.html"
         })
         .when("/bcAddTest", {
-            templateUrl : "bcAddGen.html",
+            templateUrl : "bcAddGen.html"
         })
         .when("/about", {
-            templateUrl : "about.html",
+            templateUrl : "about.html"
         })
         .when("/brainW", {
-            templateUrl : "brainWallet.html",
+            templateUrl : "brainWallet.html"
+        })
+        .when("/hdWallet", {
+            templateUrl : "bcHDWallet.html"
         })
         .when("/contact", {
-            templateUrl : "contact.html",
+            templateUrl : "contact.html"
         })
-
 });

@@ -5,10 +5,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="qrcode.js"></script>
+    <script src="qrcode_UTF8.js"></script>
+    <script src="angular-qrcode.js"></script>
+    <script src="mainCtrl.js"></script>
+    <script src="lib.min.js" ></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="blockchain.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="lib.min.js" ></script>
+    
     <style>
         body  {
             background-image: url("coverb.gif");
@@ -56,6 +61,7 @@
                             <li><a href="#!bcCalculator">Bitcoin Calculator</a></li>
                             <li><a href="#!bcAddTest">Bitcoin Address Test</a></li>
                             <li><a href="#!brainW">Bitcoin Brain Wallet Test</a></li>
+                            <li><a href="#!hdWallet">Bitcoin BIP32 HD Wallet Test</a></li>
                         </ul>
                     </li>
                     <li><a href="#!about">ABOUT</a></li>
@@ -73,7 +79,6 @@
     <div ng-app="indexApp"> 
         <div ng-view></div>
     </div> 
-
-    <script src="mainCtrl.js"></script>   
+  
 </body>
 </html>
