@@ -444,6 +444,35 @@ indexApp.controller('brainWalletCtrl', function($scope, $http) {
     }
      
 });
+
+indexApp.controller('contactCtrl', function($scope, $http) {
+    var config = {
+            headers: {
+                    'Content-Type': 'application/json; charset=UTF-8'
+            }
+    }
+    $scope.contactSubmit = function() {
+        var url = "/contactSubmit";
+        var data = JSON.stringify({
+            name: $scope.name,
+            email: $scope.email,
+            comment: $scope.comment
+        });
+        $http.post(url, data, config).then( function(response) {
+            if(response.yo != "error") {
+                $scope.name = ""
+                $scope.email = ""
+                $scope.comment = ""
+                $scope.messageConfirm = "Thank you for your message, we will contact you soon."
+            }
+            else{
+                $scope.messageConfirm = "Opps, we got some issues. Please try to send again your message."
+            }
+            
+        });
+    }
+     
+});
 indexApp.config(function($routeProvider) {
         $routeProvider
         .when("/prvK2WIF", {

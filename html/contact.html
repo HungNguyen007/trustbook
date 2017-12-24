@@ -14,33 +14,35 @@
 <body>
 
 <!-- Container (Contact Section) -->
-    <div id="contact" class="container-fluid bg-grey">
+    <div class="container-fluid bg-grey" ng-controller="contactCtrl" id="contact">
         <h2 class="text-center">CONTACT</h2>
         <div class="row">
             <div class="col-sm-5">
                 <p>Contact us and we'll get back to you within 24 hours.</p>
                 <p><span class="glyphicon glyphicon-map-marker"></span> Ho Chi Minh, Viet Nam</p>
-                <p><span class="glyphicon glyphicon-phone"></span> +084 937011159</p>
-                <p><span class="glyphicon glyphicon-envelope"></span>goon2006@gmail.com</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +84 937011159</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> goon2006@gmail.com</p>
             </div>
             <div class="col-sm-7 slideanim">
-                <div class="row">
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                <form ng-submit="contactSubmit()">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" ng-model="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" ng-model="email" name="email" placeholder="Email" type="email" required>
+                        </div>
                     </div>
-                    <div class="col-sm-6 form-group">
-                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    <textarea class="form-control" ng-model="comment" name="comment" placeholder="Comment" rows="5"></textarea><br>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button class="btn btn-default pull-right" type="submit" >Send</button>
+                        </div>
                     </div>
-                </div>
-                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-                <div class="row">
-                    <div class="col-sm-12 form-group">
-                        <button class="btn btn-default pull-right" type="submit">Send</button>
-                    </div>
-                </div>
+                </form>
+                <h3>{{messageConfirm}}</h3>
             </div>
         </div>
     </div>
-
 </body>
 </html>  

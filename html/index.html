@@ -15,8 +15,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-        body  {
+        .jumbotron  {
             background-image: url("coverb.gif");
+            color: #ffffff;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+            text-align: center;
+            margin: 25px 0;
+            }
         }
 
         input[placeholder=Search] {
@@ -46,7 +62,7 @@
     </script>
 </head>
 
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -61,6 +77,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="#about">ABOUT</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES</a>
                         <ul class="dropdown-menu">
                             <li><a href="#!prvK2WIF">Private key to WIF</a></li>
@@ -71,8 +88,7 @@
                             <li><a href="#!hdWallet">Bitcoin BIP32 HD Wallet Test</a></li>
                         </ul>
                     </li>
-                    <li><a href="#!about">ABOUT</a></li>
-                    <li><a href="#!contact">CONTACT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
@@ -83,9 +99,62 @@
         </div>
     </nav>
 
-    <div ng-app="indexApp"> 
-        <div ng-view></div>
+    <div class="jumbotron text-center">
+        <h1>TRUSTBOOK</h1>
+        <p>We specialize in Blockchain and Cryptocurrency</p>
+    </div>
+    
+
+    <div ng-app="indexApp">
+        <!-- Container (About Section) -->
+        <div id="about" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>About Trustbook Page</h2>
+                    <h3>This site offers Bitcoin, Blockchain tools and realtime data for developers and users who are interested in Bitcoin and Blockchain technology.</h3>
+                    <h3>As you know, the core technology of Bitcoin called Blockchain, all the transaction information on Bitcoin blockchain are not stored in any centralized server but they are available on every full nodes of Bitcoin network. This decentralized Bitcoin network and all the algorithms using in Bitcoin Blockchain will protect sensive data of transactions and user from fraud and any manipulation activities of malicious person or group.</h3>
+                    <h3>Our mission are to propagate Blockchain technology to many people as musch as possible, help them understanding the useful of Bitcoin/Blockchain in our daily life and explore the potential applications behind the Blockchain technology.</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Container (Contact Section) -->
+        <div id="contact" class="container-fluid bg-grey" ng-controller="contactCtrl" >
+            <h2 class="text-center">CONTACT</h2>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p>Contact us and we'll get back to you within 24 hours.</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Ho Chi Minh, Viet Nam</p>
+                    <p><span class="glyphicon glyphicon-phone"></span> +84 937011159</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span> goon2006@gmail.com</p>
+                </div>
+                <div class="col-sm-7 slideanim">
+                    <form ng-submit="contactSubmit()">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" ng-model="name" name="name" placeholder="Name" type="text" required>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input class="form-control" ng-model="email" name="email" placeholder="Email" type="email" required>
+                            </div>
+                        </div>
+                        <textarea class="form-control" ng-model="comment" name="comment" placeholder="Comment" rows="5"></textarea><br>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button class="btn btn-default pull-right" type="submit" >Send</button>
+                            </div>
+                        </div>
+                    </form>
+                    <h3>{{messageConfirm}}</h3>
+                </div>
+            </div>
+        </div>
+    
+        <!-- <div ng-view></div> -->
     </div> 
-  
 </body>
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+</footer>
 </html>

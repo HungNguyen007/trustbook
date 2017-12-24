@@ -41,3 +41,10 @@ git add .
 git commit -m "<Comment>"
 git push --> push to GitHub
 git push heroku master --> push to Heroku
+
+7. [Gulp]
+Run 'gulp' for automation tasks.
+Ref link: http://andy-carter.com/blog/a-beginners-guide-to-the-task-runner-gulp
+
+8. [Enable Contact Forms]
+Ref link: http://denisecase.github.io/2016/10/08/enabling-contact-form/

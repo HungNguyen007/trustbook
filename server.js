@@ -10,6 +10,7 @@ const wifRoute = require('./src/routes/wifRoute');
 const addTestRoute = require('./src/routes/addTestRoute');
 const brainWRoute = require('./src/routes/brainWRoute');
 const hdWalletRoute = require('./src/routes/hdWalletRoute');
+const contactRoute = require('./src/routes/contactRoute');
 
 var http = require("http");
 
@@ -41,6 +42,7 @@ app.use(wifRoute);
 app.use(addTestRoute);
 app.use(brainWRoute);
 app.use(hdWalletRoute);
+app.use(contactRoute);
 
 var server = app.listen(server_port, function () {
     var port = server.address().port
