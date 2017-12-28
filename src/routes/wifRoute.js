@@ -10,6 +10,10 @@ var multer = require('multer');
 var upload = multer(); // for parsing multipart/form-data
 
 
+router.get('/PrvK2WIF_Main_SPA.html', function (req, res) {
+    res.sendFile("/PrvK2WIF_Main_SPA.html");
+})
+
 router.get('/randomOK', function (req, res) {
     // Prepare output
     var response = prvK2WIF.createRandomPrvKey();

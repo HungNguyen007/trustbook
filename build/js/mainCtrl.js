@@ -474,31 +474,31 @@ indexApp.controller('contactCtrl', function($scope, $http) {
      
 });
 indexApp.config(function($routeProvider) {
-        $routeProvider
-        .when("/prvK2WIF", {
-            templateUrl : "PrvK2WIF_Main_SPA.html"
-        })
-        .when("/bcStatsPage", {
-            templateUrl : "bcStatsPage.html"
-        })
-        .when("/bcCalculator", {
-            templateUrl : "bcCalculator.html"
-        })
-        .when("/bcAddTest", {
-            templateUrl : "bcAddGen.html"
-        })
-        .when("/about", {
-            templateUrl : "about.html"
-        })
-        .when("/brainW", {
-            templateUrl : "brainWallet.html"
-        })
-        .when("/hdWallet", {
-            templateUrl : "bcHDWallet.html"
-        })
-        .when("/contact", {
-            templateUrl : "contact.html"
-        })
+    $routeProvider
+    // .when("/prvK2WIF", {
+    //     templateUrl : "PrvK2WIF_Main_SPA.html"
+    // })
+    // .when("/bcStatsPage", {
+    //     templateUrl : "bcStatsPage.html"
+    // })
+    // .when("/bcCalculator", {
+    //     templateUrl : "bcCalculator.html"
+    // })
+    // .when("/bcAddTest", {
+    //     templateUrl : "bcAddGen.html"
+    // })
+    // .when("/about", {
+    //     templateUrl : "about.html"
+    // })
+    // .when("/brainW", {
+    //     templateUrl : "brainWallet.html"
+    // })
+    // .when("/hdWallet", {
+    //     templateUrl : "bcHDWallet.html"
+    // })
+    // .when("/contact", {
+    //     templateUrl : "contact.html"
+    // })
 });
 indexApp.controller('prk2WifCtrl', function($scope) {
     $scope.prvKey = "0C28FCA386C7A227600B2FE50B7CAE11EC86D3BF1FBE471BE89827E19D72AA1D";

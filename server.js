@@ -11,6 +11,7 @@ const addTestRoute = require('./src/routes/addTestRoute');
 const brainWRoute = require('./src/routes/brainWRoute');
 const hdWalletRoute = require('./src/routes/hdWalletRoute');
 const contactRoute = require('./src/routes/contactRoute');
+const indexRoute = require('./src/routes/indexRoute');
 
 var http = require("http");
 
@@ -43,6 +44,7 @@ app.use(addTestRoute);
 app.use(brainWRoute);
 app.use(hdWalletRoute);
 app.use(contactRoute);
+app.use(indexRoute);
 
 var server = app.listen(server_port, function () {
     var port = server.address().port
