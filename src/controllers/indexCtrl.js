@@ -1,5 +1,5 @@
-indexApp.config(function($routeProvider) {
-    $routeProvider
+// indexApp.config(function($routeProvider) {
+//     $routeProvider
     // .when("/prvK2WIF", {
     //     templateUrl : "PrvK2WIF_Main_SPA.html"
     // })

@@ -13,4 +13,8 @@ router.get('/index.html', function (req, res) {
     res.sendFile("/index.html");
 })
 
+router.get('/', function (req, res) {
+    res.sendFile("/index.html");
+})
+
 module.exports = router;

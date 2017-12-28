@@ -16,7 +16,7 @@
     "heroku",
     "express"
   ],
-  "author": "",
+  "author": "Hung",
   "license": "ISC",
   "dependencies": {
     "angular-qrcode": "^7.2.0",
