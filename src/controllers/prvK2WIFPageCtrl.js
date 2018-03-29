@@ -8,3 +8,5 @@ indexApp.controller('prk2WifCtrl', function($scope) {
     $scope.wif = "5HueCGU8rMjxEXxiPuD5BDku4MkFqeZyd4dZ1jvhTVqvbTLvyTJ";
 });
 
+//To render second app in one page
+angular.element(document).ready(function() {angular.bootstrap(document.getElementById("wif"), ['indexApp']); });

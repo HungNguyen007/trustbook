@@ -3,7 +3,6 @@
  */
 
 var express = require('express')
-var app = express();
 var router = express.Router()
 var addTest = require('../BC_AddTest')
 var multer = require('multer');

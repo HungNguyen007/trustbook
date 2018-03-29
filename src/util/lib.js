@@ -13,7 +13,7 @@ function addCommas(n) {
 // return integers and decimal numbers from input
 // optionally truncates decimals- does not 'round' input
 function validDigits(n, dec) {
-    n= n.replace(/[^\d\.]+/g, '');
+    n= n.replace(/[^\d\.\,]+/g, '');
     var ax1= n.indexOf('.'), ax2= -1;
     if(ax1!= -1){
         ++ax1;

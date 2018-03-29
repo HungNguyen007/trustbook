@@ -1,4 +1,3 @@
-
 indexApp.controller('bcHDWalletCtrl', function($scope, $http) {
     
     $scope.bip32_source_passphrase = 'crazy horse battery staple'
@@ -214,3 +213,6 @@ indexApp.controller('bcHDWalletCtrl', function($scope, $http) {
     ***************************************************/
 
 });
+
+//To render second app in one page
+angular.element(document).ready(function() {angular.bootstrap(document.getElementById("HDWallet"), ['indexApp']); });

@@ -3,7 +3,6 @@
  */
 
 var express = require('express')
-var app = express();
 var router = express.Router()
 var prvK2WIF = require('../BitCoin_PrvKey2WIF')
 var multer = require('multer');

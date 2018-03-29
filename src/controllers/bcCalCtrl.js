@@ -109,3 +109,5 @@ indexApp.controller('bcCalCtrl', function($scope, $http, $timeout) {
       
 });
 
+//To render second app in one page
+angular.element(document).ready(function() {angular.bootstrap(document.getElementById("bcCal"), ['indexApp']); });

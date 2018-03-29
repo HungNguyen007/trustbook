@@ -24,4 +24,11 @@
     // .when("/contact", {
     //     templateUrl : "contact.html"
     // })
-});
+// });
+
+// searchApp.config(function($routeProvider) {
+//     $routeProvider
+//     .when("/searchEngineCtrl", {
+//         templateUrl : "searchPage.html"
+//     })
+// })

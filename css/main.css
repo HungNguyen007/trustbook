@@ -1,49 +1,45 @@
-body {
-    margin: 60px auto;
-    width: 80%;
-}
-input[type='text'] {
-    font-size: 11px;
-}
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
-}
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
-a {
-    text-decoration: none;
-    color: #999;
-}
-a:hover {
-    text-decoration: underline;
-}
-h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-}
-p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-}
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
-}
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
-ul.posts li {
-    list-style: none;
+
+.jumbotron  {
+    background-image: url("coverb.gif");
+    color: #ffffff;
 }
 
-.center-block {
-  display: block;
-  margin: auto;
+.container-fluid {
+    padding: 60px 50px;
+}
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+    }
+}
+
+input[placeholder=Search] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('search.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[placeholder=Search]:focus {
+    width: 100%;
+}
+
+.blog-header {
+    border-style: none;
+    background-color: lightgrey;
+    padding: 0px 0px 0px 10px;
+    margin: auto;
 }

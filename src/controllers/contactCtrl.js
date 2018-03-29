@@ -1,10 +1,11 @@
-
 indexApp.controller('contactCtrl', function($scope, $http) {
+
+    $scope.messageConfirm = "";
+    
     var config = {
-            headers: {
-                    'Content-Type': 'application/json; charset=UTF-8'
-            }
+        headers: {'Content-Type': 'application/json; charset=UTF-8'}
     }
+    
     $scope.contactSubmit = function() {
         var url = "/contactSubmit";
         var data = JSON.stringify({
@@ -27,3 +28,6 @@ indexApp.controller('contactCtrl', function($scope, $http) {
     }
      
 });
+
+//To render second app in one page
+angular.element(document).ready(function() {angular.bootstrap(document.getElementById("contact"), ['indexApp']); });

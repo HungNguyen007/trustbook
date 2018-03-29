@@ -1,58 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="qrcode.js"></script>
-    <script src="qrcode_UTF8.js"></script>
     <script src="angular-qrcode.js"></script>
+    <script src="qrcode.js"></script>
     <script src="mainCtrl.js"></script>
     <script src="lib.min.js" ></script>
+    <script>
+        $(function(){
+            $("#includedContentDiv").load("nav_template.html"); 
+        });
+    </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="blockchain.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        .jumbotron  {
-            background-image: url("coverb.gif");
-            color: #ffffff;
-        }
-
-        .container-fluid {
-            padding: 60px 50px;
-        }
-
-        footer .glyphicon {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        @media screen and (max-width: 768px) {
-            .col-sm-4 {
-            text-align: center;
-            margin: 25px 0;
-            }
-        }
-
-        input[placeholder=Search] {
-            width: 130px;
-            box-sizing: border-box;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: white;
-            background-image: url('search.png');
-            background-position: 10px 10px; 
-            background-repeat: no-repeat;
-            padding: 12px 20px 12px 40px;
-            -webkit-transition: width 0.4s ease-in-out;
-            transition: width 0.4s ease-in-out;
-        }
-        input[placeholder=Search]:focus {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
@@ -60,16 +26,10 @@
         enable_page_level_ads: true
         });
     </script>
-</head>
+</head>  
 <head>
     <title>BIP32 Hierarchical Deterministic Key Generator</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="blockchain.css">
-    <style>
-        body  {
-            background-image: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -81,11 +41,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">TRUSTBOOK</a>
+                <a class="navbar-brand" href="/">TRUSTBOOK</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
                     <li><a href="index.html#about">ABOUT</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES</a>
                         <ul class="dropdown-menu">
@@ -99,21 +59,24 @@
                     </li>
                     <li><a href="index.html#contact">CONTACT</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </form>
+                
+                <div id="App1" ng-app="searchApp" ng-controller="searchEngineCtrl">
+                    <form class="navbar-form navbar-right" ng-submit="searchEngineFirer()">
+                        <div class="form-group">
+                            <input type="text" id="search-input" class="form-control" placeholder="Search" ng-model="keyWords">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>
-
+    
     <div class="jumbotron text-center">
         <h1>TRUSTBOOK</h1>
         <p>We specialize in Blockchain and Cryptocurrency</p>
     </div>
 
-    <div class="container" ng-app="indexApp" ng-controller="bcHDWalletCtrl">
+    <div id="HDWallet" class="container" ng-app="indexApp" ng-controller="bcHDWalletCtrl">
         <div class="tab-content">
             <div class="tab-pane fade in active" id="bip32">
                 <form class="form-horizontal">
@@ -295,7 +258,6 @@
                             <label class="col-lg-2 control-label" for="genAddrQR">Address QR Code</label>
                             <div class="col-lg-10">
                                 <a href="" ng-attr-title="{{qrShortDesc}}" ><qrcode data="{{qrCode}}" size="150"></qrcode></a>
-                                <!-- <a href="" ng-attr-title="{{qrShortDesc}}" ><img ng-src={{qrCode}} alt="qrcode" ></a> -->
                             </div>
                         </div>
                     </fieldset>

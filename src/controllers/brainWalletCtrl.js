@@ -1,4 +1,3 @@
-
 indexApp.controller('brainWalletCtrl', function($scope, $http) {
     
     $scope.secretPhr = "correct horse battery staple";
@@ -6,10 +5,9 @@ indexApp.controller('brainWalletCtrl', function($scope, $http) {
     $scope.address = "1JwSSubhmg6iPtRjtyqhUYYH7bZg3Lfy1T";
 
     var config = {
-            headers: {
-                    'Content-Type': 'application/json; charset=UTF-8'
-            }
+        headers: {'Content-Type': 'application/json; charset=UTF-8'}
     }
+    
     $scope.bwConvert = function() {
         var url = "/bwConvert";
         var data = JSON.stringify({secretPhr: $scope.secretPhr});
@@ -21,3 +19,6 @@ indexApp.controller('brainWalletCtrl', function($scope, $http) {
     }
      
 });
+
+//To render second app in one page
+angular.element(document).ready(function() {angular.bootstrap(document.getElementById("brainWallet"), ['indexApp']); });

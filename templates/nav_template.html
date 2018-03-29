@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TRUSTBOOK</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="PrvK2WIF_Main_SPA.html">Bitcoin Private key to WIF</a></li>
+                        <li><a href="bcStatsPage.html">Bitcoin Popular Stats</a></li>
+                        <li><a href="bcCalculator.html">Bitcoin Calculator</a></li>
+                        <li><a href="bcAddGen.html">Bitcoin Address Test</a></li>
+                        <li><a href="brainWallet.html">Bitcoin Brain Wallet Test</a></li>
+                        <li><a href="bcHDWallet.html">Bitcoin BIP32 HD Wallet Test</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            
+            <div id="App1" ng-app="searchApp" ng-controller="searchEngineCtrl">
+                <form class="navbar-form navbar-right" ng-submit="searchEngineFirer()">
+                    <div class="form-group">
+                        <input type="text" id="search-input" class="form-control" placeholder="Search" ng-model="keyWords">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <h1>TRUSTBOOK</h1>
+    <p>We specialize in Blockchain and Cryptocurrency</p>
+</div>

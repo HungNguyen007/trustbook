@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="searchApp" ng-controller="searchResultCtrl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <script src="angular-qrcode.js"></script>
     <script src="mainCtrl.js"></script>
     <script src="lib.min.js" ></script>
+    <script data-main="elasticlunr_app.js" src="require.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="blockchain.css">
     <link rel="stylesheet" href="main.css">
@@ -22,7 +24,7 @@
     </script>
 </head>  
 <head>
-    <title>Bitcoin Calculators</title>
+    <title>You searched for {{searchQuery}}</title>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -38,7 +40,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
-                    <li><a href="index.html##about">ABOUT</a></li>
+                    <li><a href="index.html#about">ABOUT</a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES</a>
                         <ul class="dropdown-menu">
                             <li><a href="PrvK2WIF_Main_SPA.html">Bitcoin Private key to WIF</a></li>
@@ -52,7 +54,7 @@
                     <li><a href="index.html#contact">CONTACT</a></li>
                 </ul>
                 
-                <div id="App1" ng-app="searchApp" ng-controller="searchEngineCtrl">
+                <div id="App1" ng-controller="searchEngineCtrl">
                     <form class="navbar-form navbar-right" ng-submit="searchEngineFirer()">
                         <div class="form-group">
                             <input type="text" id="search-input" class="form-control" placeholder="Search" ng-model="keyWords">
@@ -68,48 +70,23 @@
         <p>We specialize in Blockchain and Cryptocurrency</p>
     </div>
 
-    <div id="bcCal" class="container" ng-app="indexApp" ng-controller="bcCalCtrl">
-        
-        <h3 class="text-center">Bitcoin to Fiat Money Conversion</h2>
-        
-        <form class="form-horizontal" > 
-            <div class="form-group">
-                <div class="col-md-3">
-                </div> 
-                <div class="col-md-3">
-                    <input type="text" ng-pattern="regex" ng-change="toFiatMoney()" class="form-control" ng-model="bcValue" >
-                </div>       
-                <div class="col-md-3">
-                    <select ng-change="selectConverter()" class="form-control" ng-model="bcType" >
-                        <option value="BTC" selected>BTC - Bitcoin</option>
-                        <option value="mBTC" >mBTC - Mili Bitcoin</option>
-                        <option value="uBTC" >uBTC - Micro Bitcoin</option>
-                    </select>
-                </div>
-            </div>    
-
-            <div class="form-group">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-3" class="form-group">
-                    <input type="text" ng-pattern="regex" ng-change="toBtcDelay()" class="form-control" ng-model="fiatValue">
-                </div>                   
-                <div style="color:dimgrey" class="col-md-3" class="form-group">
-                    <select  ng-change="selectConverter()" class="form-control" id="sel1" ng-model="currency">
-                        <option value="USD" selected>USD - United State Dollar</option>
-                        <option value="EUR" >EUR - Euro</option>
-                        <option value="GBP" >GBP - British Pound Sterling</option>
-                        <option value="JPY" >JPY - Japanese Yen </option>
-                        <option value="AUD" >AUD - Australian Dollar </option>
-                        <option value="SGD" >SGD - Singapore Dollar</option>
-                        <option value="CNY" >CNY - Chinese Yuan </option>
-                    </select>
-                </div>
+    <!-- <div ng-controller="searchResultCtrl"> -->
+    <div>
+        <div class="col-md-5" style="padding: 30px; margin: auto;">
+            <div class="blog-header">
+                <h1>Search results for "{{searchQuery}}"</h1>
             </div>
-        </form>
-
+            <div class="header-mini">
+                <h4 id="num"></h4>
+            </div>
+        </div>
     </div>
-    <br>
-    
+
+    <div class="row" style="margin-left: 0px; margin-right: 0px;">
+        <div class="col-md-6">
+            <div id='article-list-container'></div>
+        </div>
+    </div>
+
 </body>
 </html>

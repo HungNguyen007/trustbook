@@ -48,3 +48,12 @@ Ref link: http://andy-carter.com/blog/a-beginners-guide-to-the-task-runner-gulp
 
 8. [Enable Contact Forms]
 Ref link: http://denisecase.github.io/2016/10/08/enabling-contact-form/
+
+9. [Rendering 2 AngularJS app in one page]
+Solution: https://stackoverflow.com/questions/18571301/angularjs-multiple-ng-app-within-a-page
+
+10. [Build index JSON file for elasticlunr]
+Run file searchIdx_builder.js
+
+11. [Hashbang mode and HTML5 mode in angularjs]
+Using HTML5 mode to solve any issue in URL resolution.
