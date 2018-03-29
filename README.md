@@ -39,7 +39,7 @@ javascript-obfuscator BitCoin_PrvKey2WIF.min.js --output BitCoin_PrvKey2WIF-obfu
 6. [Push to git]
 git add .
 git commit -m "<Comment>"
-git push origin master--> push to GitHub
+git push origin master --> push to GitHub
 git push heroku master --> push to Heroku
 
 7. [Gulp]
