@@ -1,5 +1,5 @@
 {
-  "name": "Demo_Bitcoin",
+  "name": "demo_bitcoin",
   "version": "1.0.0",
   "description": "A Node.js app to serve Bitcoin/Blockchain tools",
   "engines": {
