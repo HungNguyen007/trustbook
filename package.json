@@ -38,10 +38,10 @@
     "path": "^0.12.7",
     "requirejs": "^2.3.5",
     "stache": "^0.1.0",
-    "text": "github:requirejs/text"
+    "text": "github:requirejs/text",
+    "async": "^2.5.0"
   },
   "devDependencies": {
-    "async": "^2.5.0",
     "babel-cli": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "browserify": "^14.4.0",
